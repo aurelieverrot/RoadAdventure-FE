@@ -11,8 +11,7 @@ const NavBar = () => {
           <Menu.Item><Link to="/">Home</Link></Menu.Item>
           <Menu.Item><Link to="/about">About</Link></Menu.Item>
           {/* <Menu.Item>My Profile</Menu.Item> */}
-          {/* <Menu.Item position='right'>Sign Up / Login</Menu.Item> */}
-          {/* <Menu.Item >Login</Menu.Item> */}
+          <Menu.Item position='right'><Link to="/login">Signup / Login</Link></Menu.Item>
           {/* <Menu.Item >Logout</Menu.Item> */}
         </Menu>
       </Sticky>

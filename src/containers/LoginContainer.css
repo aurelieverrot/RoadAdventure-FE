@@ -1,0 +1,15 @@
+#root {
+  background-color: rgba(34, 35, 34, 0.04);
+  height: 100vh;
+}
+
+.ui.segment {
+  /* width: 80%; */
+  margin: 40px 100px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.form-column {
+
+}
