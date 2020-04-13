@@ -4,6 +4,7 @@ import Home from '../components/Home/Home';
 import About from '../components/About/About';
 // import Register from '../components/auth/Register/Register';
 import LoginContainer from '../containers/LoginContainer';
+import TripContainer from '../containers/TripContainer';
 
 const Routes = (props) => {
   return (
@@ -19,6 +20,10 @@ const Routes = (props) => {
       <Route
         exact path='/login'
         component={ LoginContainer }
+      />
+      <Route
+        exact path='/trips'
+        component={ TripContainer }
       />
     </Switch>
   )

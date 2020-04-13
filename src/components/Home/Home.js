@@ -6,64 +6,36 @@ import TripApi from '../../api/TripApi';
 class Home extends React.Component {
   
   state = {
-    // trips: [{fake: 'data'}],
     cards: []
   }
+
+  // 1/ create a function: on event click, redirect to page of the trip
+  // 2/ in cardsinJSX, 
 
   componentDidMount() {  
     TripApi.tripIndex()
     .then(res => {
       let cardsDataFromAPI = res.data; // [{},{},{}]
-
       let cardsInJSX = []; //[<Card/>,<Card/>,<Card/>]
-
       for (let index in cardsDataFromAPI) {
         cardsInJSX.push(
           <Card>
-              <Card.Content>
-                <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
-                <Card.Meta>by Lili Verrot</Card.Meta>
-                <Card.Description>
-                  Discover my trip to Morro Bay in 2019
-                </Card.Description>
-              </Card.Content>
-            </Card>
+            <Card.Content>
+              <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
+              <Card.Meta>by Lili Verrot</Card.Meta>
+              <Card.Description>
+                Discover my trip to Morro Bay in 2019
+              </Card.Description>
+            </Card.Content>
+          </Card>
         )
-      }
-
-
+      };
 
       this.setState({
         cards: cardsInJSX
-      })
-    }
-      )
-
-      
-    console.log(TripApi.tripIndex)
-  }
-  
- 
-
-  getTrips = () => {
-    this.trips.push(this.TripApi.tripIndex)
-  }
-
-  makeCards = () => {
-    for (let trip in this.trips) {
-      this.cards.push(
-        <Card>
-              <Card.Content>
-                <Card.Header>Road to Morro Bay</Card.Header>
-                <Card.Meta>by Lili Verrot</Card.Meta>
-                <Card.Description>
-                  Discover my trip to Morro Bay in 2019
-                </Card.Description>
-              </Card.Content>
-            </Card>
-      )
-    }
-  }
+      });
+    });
+  };
 
     render() {
       return(
