@@ -10,7 +10,11 @@ class Home extends React.Component {
   }
 
   // 1/ create a function: on event click, redirect to page of the trip
-  // 2/ in cardsinJSX, 
+  // 2/ in cardsinJSX, set attribute of html to fire the function on click
+  onClick() {
+    
+  }
+
 
   componentDidMount() {  
     TripApi.tripIndex()
@@ -30,30 +34,29 @@ class Home extends React.Component {
           </Card>
         )
       };
-
       this.setState({
         cards: cardsInJSX
       });
     });
   };
 
-    render() {
-      return(
-        <main>
-          <div className="background">Photo background here</div>
-          <Divider />
-          <div className="browse-trips">
-            <h1>Browse Trips</h1>    
-          </div>
-          <div className="browse-trips">
-            <Grid columns={3} relaxed='very'>
-              <Card.Group>
-                {this.state.cards}
-              </Card.Group>
-            </Grid>
-          </div>
-        </main>
-      )}
+  render() {
+    return(
+      <main>
+        <div className="background">Photo background here</div>
+        <Divider />
+        <div className="browse-trips">
+          <h1>Browse Trips</h1>    
+        </div>
+        <div className="browse-trips">
+          <Grid columns={3} relaxed='very'>
+            <Card.Group>
+              {this.state.cards}
+            </Card.Group>
+          </Grid>
+        </div>
+      </main>
+    )}
 }
 
 export default Home;
