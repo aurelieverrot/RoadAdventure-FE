@@ -5,11 +5,36 @@
 
 .ui.segment {
   /* width: 80%; */
-  margin: 40px 100px;
+  margin: 30px 100px;
   /* display: flex;
   justify-content: center; */
 }
 
-.form-column {
+h1 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
 
+.logo {
+  width: 40%;
+  height: 130px;
+  background-color: chartreuse;
+  text-align: center;
+  margin: 25px auto;
+}
+
+.equal.width.fields.form-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui.button {
+  width: 140px;
+  margin-top: 20px;
+  margin-left: 7px;
+}
+
+label {
+  padding-top: 12px;
 }
