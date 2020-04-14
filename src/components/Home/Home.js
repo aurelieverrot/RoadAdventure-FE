@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import { Divider, Card, Grid } from 'semantic-ui-react';
 import TripApi from '../../api/TripApi';
@@ -9,29 +10,25 @@ class Home extends React.Component {
     cards: []
   }
 
-  // 1/ create a function: on event click, redirect to page of the trip
-  // 2/ in cardsinJSX, set attribute of html to fire the function on click
-  onClick() {
-    
-  }
-
-
   componentDidMount() {  
     TripApi.tripIndex()
     .then(res => {
       let cardsDataFromAPI = res.data; // [{},{},{}]
       let cardsInJSX = []; //[<Card/>,<Card/>,<Card/>]
       for (let index in cardsDataFromAPI) {
+        let tripId = cardsDataFromAPI[index]._id
         cardsInJSX.push(
-          <Card>
-            <Card.Content>
-              <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
-              <Card.Meta>by Lili Verrot</Card.Meta>
-              <Card.Description>
-                Discover my trip to Morro Bay in 2019
-              </Card.Description>
-            </Card.Content>
-          </Card>
+          <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
+            <Card>
+              <Card.Content>
+                <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
+                <Card.Meta>by Lili Verrot</Card.Meta>
+                <Card.Description>
+                  {cardsDataFromAPI[index].shortText}
+                </Card.Description>
+              </Card.Content>
+            </Card>
+          </Link>
         )
       };
       this.setState({

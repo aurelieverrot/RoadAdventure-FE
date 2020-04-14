@@ -29,7 +29,7 @@ class TripsContainer extends React.Component {
                 <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
                 <Card.Meta>by Lili Verrot</Card.Meta>
                 <Card.Description>
-                  Discover my trip to Morro Bay in 2019
+                  {cardsDataFromAPI[index].shortText}
                 </Card.Description>
               </Card.Content>
             </Card>
@@ -50,7 +50,6 @@ class TripsContainer extends React.Component {
     return(
       <>
         <TripList cards={this.state.cards} />
-        {/* <Trip tripId={this.state.tripId}/> */}
       </>
     )
   }

@@ -5,10 +5,12 @@ class Trip extends React.Component {
 
   state = {
     title: '',
-    status: ''
+    status: '',
+    shortText: ''
   }
 
   componentDidMount() {
+    console.log(this.props)
     let tripId = window.location.pathname.split('/')[2]
     TripApi.tripShow(tripId)
       .then(res => {
@@ -23,6 +25,7 @@ class Trip extends React.Component {
         })}
         this.setState({
           title: res.data.title,
+          shortText: res.data.shortText
         })
     })
   }
@@ -33,6 +36,7 @@ class Trip extends React.Component {
         <h1>{this.state.title}</h1>
         <h3>Created by:</h3>
         <h3>Status: {this.state.status}</h3>
+        <h3>{this.state.shortText}</h3>
         <h2>List of stops</h2>
       </>
     )
