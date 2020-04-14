@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Home from '../components/Home/Home';
 import About from '../components/About/About';
+import Trip from '../components/Trip/Trip';
 // import Register from '../components/auth/Register/Register';
 import LoginContainer from '../containers/LoginContainer';
-import TripContainer from '../containers/TripContainer';
+import TripsContainer from '../containers/TripsContainer';
 
 const Routes = (props) => {
   return (
@@ -23,7 +24,11 @@ const Routes = (props) => {
       />
       <Route
         exact path='/trips'
-        component={ TripContainer }
+        component={ TripsContainer }
+      />     
+      <Route
+      exact path='/trips/:tripId'
+      component={ Trip }
       />
     </Switch>
   )

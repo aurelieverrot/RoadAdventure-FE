@@ -6,7 +6,7 @@ import Footer from '../../layout/Footer/Footer';
 import About from '../About/About';
 import Home from '../../components/Home/Home';
 import LoginContainer from '../../containers/LoginContainer';
-import TripContainer from '../../containers/TripContainer';
+import TripsContainer from '../../containers/TripsContainer';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Home />
         <About />
         <LoginContainer />
-        <TripContainer />
+        <TripsContainer />
       </Routes>
       <Footer />
     </div>
