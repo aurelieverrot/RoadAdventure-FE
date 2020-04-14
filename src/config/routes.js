@@ -8,6 +8,10 @@ import LoginContainer from '../containers/LoginContainer';
 import TripsContainer from '../containers/TripsContainer';
 
 const Routes = (props) => {
+
+  let loggedIn = localStorage.getItem('loggedIn');
+  loggedIn = (loggedIn === 'true');
+
   return (
     <Switch>
       <Route
@@ -20,7 +24,10 @@ const Routes = (props) => {
       />
       <Route
         exact path='/login'
-        component={ LoginContainer }
+        render={() => 
+          (loggedIn ? 
+            (<Redirect to="/profile"/>) :
+            (<LoginContainer loggedIn={props.loggedIn}/>))}/>
       />
       <Route
         exact path='/trips'

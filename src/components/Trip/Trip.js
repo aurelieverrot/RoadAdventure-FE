@@ -10,7 +10,7 @@ class Trip extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
+    
     let tripId = window.location.pathname.split('/')[2]
     TripApi.tripShow(tripId)
       .then(res => {
