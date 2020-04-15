@@ -6,6 +6,7 @@ import Trip from '../components/Trip/Trip';
 // import Register from '../components/auth/Register/Register';
 import LoginContainer from '../containers/LoginContainer';
 import TripsContainer from '../containers/TripsContainer';
+import ProfileContainer from '../containers/ProfileContainer';
 
 const Routes = (props) => {
 
@@ -41,6 +42,10 @@ const Routes = (props) => {
       exact path='/trips/:tripId'
       component={ Trip }
       />
+      <Route
+        exact path='/profile'
+        component={ ProfileContainer }
+      />  
     </Switch>
   )
 }
