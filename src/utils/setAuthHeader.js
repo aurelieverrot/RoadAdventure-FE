@@ -4,7 +4,7 @@ const SetAuthHeader = (JWT) => {
   if (JWT) {
     axios.defaults.headers.common['Authorization'] = JWT;
   } else {
-    delete axios.defaults.headers.common['Authorization';]
+    delete axios.defaults.headers.common['Authorization']
   }
 }
 

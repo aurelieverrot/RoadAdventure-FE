@@ -27,7 +27,11 @@ const Routes = (props) => {
         render={() => 
           (loggedIn ? 
             (<Redirect to="/profile"/>) :
-            (<LoginContainer loggedIn={props.loggedIn}/>))}/>
+            (<LoginContainer 
+              onLoginSubmit={props.onLoginSubmit} 
+              onSignupSubmit={props.onSignupSubmit}
+              onInput={props.onInput}
+              loggedIn={props.loggedIn}/>))}/>
       />
       <Route
         exact path='/trips'
