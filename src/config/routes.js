@@ -29,9 +29,11 @@ const Routes = (props) => {
           (loggedIn ? 
             (<Redirect to="/profile"/>) :
             (<LoginContainer 
-              onLoginSubmit={props.onLoginSubmit} 
-              onSignupSubmit={props.onSignupSubmit}
-              onInput={props.onInput}
+              login={props.login}
+              register={props.register}
+              // onLoginSubmit={props.onLoginSubmit} 
+              // onSignupSubmit={props.onSignupSubmit}
+              // onInput={props.onInput}
               loggedIn={props.loggedIn}/>))}/>
       />
       <Route

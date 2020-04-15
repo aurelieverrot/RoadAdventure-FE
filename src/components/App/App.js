@@ -3,13 +3,13 @@ import './App.css';
 import Routes from '../../config/routes';
 import NavBar from '../../layout/Header/Header';
 import Footer from '../../layout/Footer/Footer';
-import About from '../About/About';
-import Home from '../../components/Home/Home';
+// import About from '../About/About';
+// import Home from '../../components/Home/Home';
 import UserApi from '../../api/UserApi';
 import jwt_decode from 'jwt-decode';
 import setAuthHeader from '../../utils/setAuthHeader';
-import LoginContainer from '../../containers/LoginContainer';
-import TripsContainer from '../../containers/TripsContainer';
+// import LoginContainer from '../../containers/LoginContainer';
+// import TripsContainer from '../../containers/TripsContainer';
 
 class App extends React.Component {
 
@@ -52,7 +52,7 @@ class App extends React.Component {
           this.setState({
             username: decoded.username,
             password: decoded.password,
-            //email: email,
+            // email: email,
           })
         }
     })
@@ -98,35 +98,37 @@ class App extends React.Component {
   //   return valid;
   // }
 
-  updateState = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-    console.log(this.state)
-  }
+  // updateState = (e) => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+  //   console.log(this.state)
+  // }
 
-  onLoginSubmit = (e) => {
-    e.preventDefault()
-    // if (this.validateFields()) {
-      this.login()
-    // }
-  }
+  // onLoginSubmit = (e) => {
+  //   e.preventDefault()
+  //   // if (this.validateFields()) {
+  //     this.login()
+  //   // }
+  // }
 
-  onSignupSubmit = (e) => {
-    e.preventDefault()
-    // if (this.validateFields()) {
-      this.register()
-    // }
-  }
+  // onSignupSubmit = (e) => {
+  //   e.preventDefault()
+  //   // if (this.validateFields()) {
+  //     this.register()
+  //   // }
+  // }
 
   render () {
     return (
       <div className="App">
-        <NavBar />
-        <Routes             
-          onLoginSubmit={this.onLoginSubmit} 
-          onSignupSubmit={this.onSignupSubmit}
-          onInput={this.updateState}
+        <NavBar onClick={this.logout}/>
+        <Routes     
+          login={this.login} 
+          register={this.register}       
+          // onLoginSubmit={this.onLoginSubmit} 
+          // onSignupSubmit={this.onSignupSubmit}
+          // onInput={this.updateState}
         />
         <Footer />
       </div>

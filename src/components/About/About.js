@@ -18,13 +18,13 @@ const About = () => {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
-            <Icon name='envelope outline' to="/"/>
+          <a href="https://linkedin.com/aurelieverrot" target="_blank" rel="noopener noreferrer">
+            <Icon name='linkedin' to="https://linkedin.com/aurelieverrot"/>
           </a>
-          <a href="https://github.com/aurelieverrot" target="_blank">
+          <a href="https://github.com/aurelieverrot" target="_blank" rel="noopener noreferrer">
             <Icon name='github' to="https://github.com/aurelieverrot"/> 
           </a>
-          <a href="https://twitter.com/LiliVerrot" target="_blank">
+          <a href="https://twitter.com/LiliVerrot" target="_blank" rel="noopener noreferrer">
             <Icon name='twitter' to="https://twitter.com/LiliVerrot"/>
           </a>
         </Card.Content>

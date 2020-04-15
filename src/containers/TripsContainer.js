@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Card } from 'semantic-ui-react';
 import TripApi from '../api/TripApi';
 import TripList from '../components/Trip/TripList';
-import Trip from '../components/Trip/Trip';
 
 class TripsContainer extends React.Component {
 
