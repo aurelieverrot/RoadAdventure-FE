@@ -36,8 +36,11 @@ class Signup extends React.Component {
   onSubmit = (e) => {
     e.preventDefault()
     // if (this.validateFields()) {
-      console.log('clicked')
-      this.props.register()
+      let newUser = {
+        username: this.state.username,
+        password: this.state.password
+      }
+      this.props.register(newUser)
     // }
   }
 

@@ -3,7 +3,7 @@ axios.defaults.withCredentials = true;
 const endpoint = 'http://localhost:4000/api/v1';
 
 const signup = (user) => {
-  return axios.post(endpoint+'/login', user);
+  return axios.post(endpoint+'/register', user);
 }
 
 const login = (user) => {
