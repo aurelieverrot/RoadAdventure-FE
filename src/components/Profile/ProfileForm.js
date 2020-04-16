@@ -8,8 +8,13 @@ const ProfileForm = (props) => {
 
 
   return (
-    <Form>
+    <Form className="column">
       <p>this is the ProfileForm</p>
+      <Form.Group>
+        <Form.Input name="username" fluid label='Username' placeholder={props.user.username}/>
+        <Form.Input name="username" fluid label='Email' placeholder={props.user.email}/>
+        <Form.Input/>
+      </Form.Group>
     </Form>
   )
 }

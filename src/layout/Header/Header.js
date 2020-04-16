@@ -13,7 +13,7 @@ const NavBar = (props) => {
           <Menu.Item><Link to="/trips">Trips</Link></Menu.Item>
           <Menu.Item><Link to="/profile">My Profile</Link></Menu.Item>
           <Menu.Item position='right'><Link to="/login">Signup / Login</Link></Menu.Item>
-          <Menu.Item onClick={props.onClick}><Link to ="/">Logout</Link></Menu.Item>
+          <Menu.Item><Link onClick={props.onClick} to ="/">Logout</Link></Menu.Item>
         </Menu>
       </Sticky>
     </div>

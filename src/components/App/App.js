@@ -9,14 +9,13 @@ import setAuthHeader from '../../utils/setAuthHeader';
 
 class App extends React.Component {
 
-  state = {
-    user: '',
-    id: '',
-    
-  }
-
+  // constructor(props) {
+  //   super(props)
+  //   this.setInitialState()
+  // }
+  
   login = (user) => {
-    console.log("state:", this.state) //=> state is updated with input
+    console.log("App: state at login:", this.state) //=> state is updated with input
     UserApi.login(user)
     .then(res => {
         // this.props.loggedIn(res.data.user);
@@ -57,24 +56,34 @@ class App extends React.Component {
     localStorage.removeItem('jwtToken');
     setAuthHeader();
     this.setState({
-      username: '',
-      id: '',
-      
+      user: null,
+      id: null, 
+      loggedIn: false 
     })
   }
 
-  componentDidMount() {
+  componentWillMount() {
     // if a token exists, decode it and set it to our state
+    let newState = {
+      user: '',
+      id: ''
+    }
     if (localStorage.jwtToken) {
       setAuthHeader(localStorage.jwtToken);
       const decoded = jwt_decode(localStorage.getItem('jwtToken'));
-      this.setState({
+      newState = {
         user: decoded.username,
         id: decoded._id
-      })
+      }
     }
+
+    this.setState(newState)
   }
   
+  loggedIn() {
+    return localStorage.getItem('jwtToken') !== null;
+  }
+
   render () {
     return (
       <div className="App">
@@ -82,7 +91,9 @@ class App extends React.Component {
         <Routes     
           login={this.login} 
           register={this.register}       
-          
+          user={this.state.user}
+          id={this.state.id}
+          loggedIn={this.loggedIn}
         />
         <Footer />
       </div>
