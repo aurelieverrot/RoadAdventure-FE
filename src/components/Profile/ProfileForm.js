@@ -1,10 +1,10 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 import './Profile.css'
 
 const ProfileForm = (props) => {
 
-
+  
 
   return (
     <Form className="">
@@ -13,7 +13,8 @@ const ProfileForm = (props) => {
         
         <Form.Input name="username" fluid label='Your Username' defaultValue={props.user.username}/>
         <Form.Input name="email" fluid label='Your Email' defaultValue={props.user.email}/>
-        
+        <Button>Update My Profile</Button>
+        {/* <Button>Delete My Profile</Button> */}
       </Form.Group>
     </Form>
   )

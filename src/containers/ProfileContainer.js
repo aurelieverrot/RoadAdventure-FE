@@ -31,7 +31,7 @@ class ProfileContainer extends React.Component {
             <Card>
               <Card.Content>
                 <Card.Header>{userTrips[i].title}</Card.Header>
-                <Card.Meta>by hardcodedName</Card.Meta>
+                {/* <Card.Meta>by {userTrips[i].user}</Card.Meta> */}
                 <Card.Description>
                   {userTrips[i].shortText}
                 </Card.Description>

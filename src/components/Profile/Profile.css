@@ -3,5 +3,21 @@ h2 {
 }
 
 .fields {
-  padding: 20px;
+  padding: 20px 80px;
+}
+
+.ui.button {
+  margin-left: 100px;
+  margin-top: 40px;
+}
+.ui.button.newtrip {
+  background-color: orange;
+  margin: 50px 35%;
+  width: 200px;
+  text-align: center;
+}
+
+span {
+  font-size: 40px;
+  
 }
