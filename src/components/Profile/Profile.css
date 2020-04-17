@@ -7,9 +7,14 @@ h2 {
 }
 
 .ui.button {
-  margin-left: 100px;
+  margin-left: 130px;
   margin-top: 40px;
 }
+
+.ui.button.update {
+  margin-left: 80px;
+}
+
 .ui.button.newtrip {
   background-color: orange;
   margin: 50px 35%;

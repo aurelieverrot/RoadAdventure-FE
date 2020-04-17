@@ -13,7 +13,7 @@ const ProfileForm = (props) => {
         
         <Form.Input name="username" fluid label='Your Username' defaultValue={props.user.username}/>
         <Form.Input name="email" fluid label='Your Email' defaultValue={props.user.email}/>
-        <Button>Update My Profile</Button>
+        <Button className="update">Update My Profile</Button>
         {/* <Button>Delete My Profile</Button> */}
       </Form.Group>
     </Form>
