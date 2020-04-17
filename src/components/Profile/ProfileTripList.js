@@ -12,7 +12,7 @@ class ProfileTripList extends React.Component {
       title: '',
       shortText: '',
       status: true,
-      user: this.props.id
+      // user: this.props.id
     }
   }  
 
@@ -30,12 +30,14 @@ class ProfileTripList extends React.Component {
 
   createNewTrip = (e) => {
     e.preventDefault()
+    console.log(this.props.user)
     TripApi.tripCreate({
       title: document.getElementById('triptitle').value,
-      user: this.props.id,
+      user: this.props.user._id,
       status: this.state.newTrip.status,
       shortText: document.getElementById('triptext').value,
     })
+    .then(res => console.log(res.data))
   }
 
   handleCheckedBox = () => {

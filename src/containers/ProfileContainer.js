@@ -70,7 +70,7 @@ class ProfileContainer extends React.Component {
             <ProfileForm user={this.state.user}/>
           </Grid.Column >
           <Grid.Column >
-            <ProfileTripList trips={this.state.trips}/>
+            <ProfileTripList user={this.state.user} trips={this.state.trips}/>
           </Grid.Column >
         </Grid>
       </>
