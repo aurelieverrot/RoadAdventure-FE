@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
+import TripApi from '../../api/TripApi';
 import './Profile.css';
 
 
@@ -10,7 +11,8 @@ class ProfileTripList extends React.Component {
     newTrip: {
       title: '',
       shortText: '',
-      status: true
+      status: true,
+      user: this.props.id
     }
   }  
 
@@ -26,8 +28,14 @@ class ProfileTripList extends React.Component {
     })
   }
 
-  createNewTrip = () => {
-    
+  createNewTrip = (e) => {
+    e.preventDefault()
+    TripApi.tripCreate({
+      title: document.getElementById('triptitle').value,
+      user: this.props.id,
+      status: this.state.newTrip.status,
+      shortText: document.getElementById('triptext').value,
+    })
   }
 
   handleCheckedBox = () => {
@@ -57,8 +65,8 @@ class ProfileTripList extends React.Component {
           <div className="column">
           <Form className="">
             <Form.Group className="form-column" widths='equal'>
-              <Form.Input name='trip-title' fluid label='Title of my trip'/>
-              <Form.TextArea name='trip-description' fluid label='Describe briefly your trip'/>
+              <Form.Input id="triptitle" name='trip-title'  label='Title of my trip'/>
+              <Form.TextArea id="triptext" name='trip-description'  label='Describe briefly your trip'/>
             </Form.Group>
             <Form.Group inline>
               <label>Trip Status: </label>

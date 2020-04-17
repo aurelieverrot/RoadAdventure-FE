@@ -49,8 +49,8 @@ class Login extends React.Component {
       <Form onSubmit={this.onSubmit}>
         <h1>Already have an account? Log In!</h1>
         <Form.Group className="form-column" widths='equal'>
-          <Form.Input onInput={this.updateState} name="username" fluid label='Username' placeholder='Username' />
-          <Form.Input onInput={this.updateState} name="password" fluid label='Password' placeholder='Password' />
+          <Form.Input onInput={this.updateState} name="username"  label='Username' placeholder='Username' />
+          <Form.Input onInput={this.updateState} name="password"  label='Password' placeholder='Password' />
           <Button>Log In!</Button>
         </Form.Group>
       </Form>
