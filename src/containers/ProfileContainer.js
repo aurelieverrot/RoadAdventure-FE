@@ -27,6 +27,7 @@ class ProfileContainer extends React.Component {
       for (let i in userTrips) {
         let tripId = userTrips[i]._id
         tripCards.push(
+          <>
           <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
             <Card>
               <Card.Content>
@@ -38,6 +39,7 @@ class ProfileContainer extends React.Component {
               </Card.Content>
             </Card>
           </Link>
+          </>
         )
       }
       this.setState({
@@ -52,16 +54,15 @@ class ProfileContainer extends React.Component {
         user: res.data
       })
     })
-    
-    
+  }
+
+  componentDidUpdate() {
+    // do we need it to re-render list of trips after creating a new one?
   }
 
 
 
   render() {
-
-    
-
     return(
       <>
         <h1>Welcome {this.props.user}</h1>

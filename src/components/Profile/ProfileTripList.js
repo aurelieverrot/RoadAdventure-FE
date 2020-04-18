@@ -37,7 +37,7 @@ class ProfileTripList extends React.Component {
       status: this.state.newTrip.status,
       shortText: document.getElementById('triptext').value,
     })
-    .then(res => console.log(res.data))
+    .then(this.closeTripForm())
   }
 
   handleCheckedBox = () => {

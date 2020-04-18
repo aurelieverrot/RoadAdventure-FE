@@ -42,12 +42,6 @@ const Routes = (props) => {
             loggedIn={props.loggedIn()} 
             user={props.user}
             id={props.id}/>}/>
-        {/* render={() => */}
-        {/* //     (props.loggedIn ?
-        //       (<ProfileContainer
-        //         user={props.state.user}
-        //         id={props.state.id}/>) :
-        //         (<Redirect to="/login"/>))}/>   */}
     </Switch>
   )
 }
