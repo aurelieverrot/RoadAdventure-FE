@@ -37,8 +37,15 @@ class ProfileTripList extends React.Component {
       status: this.state.newTrip.status,
       shortText: document.getElementById('triptext').value,
     })
-    .then(this.closeTripForm())
+    // .then(this.props.updateList())
+    .then(res => {
+      console.log(this.props)
+      this.props.updateList()
+      this.closeTripForm()
+      }
+    )
   }
+  
 
   handleCheckedBox = () => {
       this.setState({
@@ -76,7 +83,7 @@ class ProfileTripList extends React.Component {
                 label='Check this box if this Road Trip has already ended'
                 onClick={this.handleCheckedBox} />
             </Form.Group>
-            <Button className="addtrip" onClick={this.createNewTrip}>Create My New Trip!</Button><Button className="closetrip" onClick={this.closeTripForm}>Nevermind! I'll do it later!</Button>
+            <Button className="addtrip" onClick={this.createNewTrip} >Create My New Trip!</Button><Button className="closetrip" onClick={this.closeTripForm}>Nevermind! I'll do it later!</Button>
           </Form>
           
           </div>

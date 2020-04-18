@@ -14,12 +14,12 @@ const tripCreate = (trip) => {
   return axios.post(endpoint, trip);
 }
 
-const tripUpdate = (trip) => {
-  return axios.put(endpoint+`${trip._id}`, trip);
+const tripUpdate = (tripId, trip) => {
+  return axios.put(endpoint+`${tripId}`, trip);
 }
 
-const tripDelete = (trip) => {
-  return axios.delete(endpoint+`/${trip._id}`);
+const tripDelete = (tripId) => {
+  return axios.delete(endpoint+`${tripId}`);
 }
 
 export default {

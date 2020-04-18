@@ -34,7 +34,13 @@ const Routes = (props) => {
         component={ TripsContainer }/>     
       <Route
         exact path='/trips/:tripId'
-        component={ Trip }/>
+        // component={ Trip }
+        render={() =>
+          <Trip 
+            loggedIn={props.loggedIn()}
+            user={props.user}
+            id={props.id}/>}/>}
+        
       <Route
         exact path='/profile'
         render={() =>

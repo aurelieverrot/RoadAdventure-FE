@@ -32,7 +32,6 @@ class ProfileContainer extends React.Component {
             <Card>
               <Card.Content>
                 <Card.Header>{userTrips[i].title}</Card.Header>
-                {/* <Card.Meta>by {userTrips[i].user}</Card.Meta> */}
                 <Card.Description>
                   {userTrips[i].shortText}
                 </Card.Description>
@@ -56,8 +55,34 @@ class ProfileContainer extends React.Component {
     })
   }
 
-  componentDidUpdate() {
-    // do we need it to re-render list of trips after creating a new one?
+  updateList = () => {
+    TripApi.tripIndex()
+    .then(res => {
+      let userTrips = res.data.filter((trip) => {
+        return trip.user === this.props.id
+      })
+      let tripCards = [];
+      for (let i in userTrips) {
+        let tripId = userTrips[i]._id
+        tripCards.push(
+          <>
+          <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
+            <Card>
+              <Card.Content>
+                <Card.Header>{userTrips[i].title}</Card.Header>
+                <Card.Description>
+                  {userTrips[i].shortText}
+                </Card.Description>
+              </Card.Content>
+            </Card>
+          </Link>
+          </>
+        )
+      }
+      this.setState({
+        trips: tripCards
+      })
+    })
   }
 
 
@@ -71,7 +96,7 @@ class ProfileContainer extends React.Component {
             <ProfileForm user={this.state.user}/>
           </Grid.Column >
           <Grid.Column >
-            <ProfileTripList user={this.state.user} trips={this.state.trips}/>
+            <ProfileTripList user={this.state.user} trips={this.state.trips} updateList={this.updateList}/>
           </Grid.Column >
         </Grid>
       </>
