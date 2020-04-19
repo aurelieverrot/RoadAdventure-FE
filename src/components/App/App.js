@@ -80,21 +80,25 @@ class App extends React.Component {
     this.setState(newState)
   }
   
-  loggedIn() {
+  loggedIn = () => {
     return localStorage.getItem('jwtToken') !== null;
   }
 
   render () {
     return (
       <div className="App">
-        <NavBar onClick={this.logout}/>
+        <NavBar 
+          user={this.state.user}
+          loggedIn={this.loggedIn} 
+          logout={this.logout}
+          />
         <Routes     
           login={this.login} 
           register={this.register}       
           user={this.state.user}
           id={this.state.id}
           loggedIn={this.loggedIn}
-        />
+          />
         <Footer />
       </div>
     )};
