@@ -9,24 +9,6 @@ class Signup extends React.Component {
     password: '',
 }
 
-  // validateFields = () => {
-  //   let keys = []
-  //   Object.keys(this.state).map(key => keys.push(key));
-  //   let valid = true
-  //   keys.map(key => {
-  //     console.log('keys:', keys)
-  //       let field = document.getElementById(key);
-  //       field.classList.remove('error');
-  //       if (this.state[key] === '') {
-  //           valid = false;
-  //           // add class error to fields
-  //           field.classList.add('error');
-  //           // add label
-  //       }
-  //   })
-  //   return valid;
-  // }
-
   updateState = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -35,13 +17,11 @@ class Signup extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    // if (this.validateFields()) {
-      let newUser = {
-        username: this.state.username,
-        password: this.state.password
-      }
-      this.props.register(newUser)
-    // }
+    let newUser = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    this.props.register(newUser)
   }
 
   render() {

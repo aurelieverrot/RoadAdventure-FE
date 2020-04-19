@@ -29,7 +29,6 @@ const About = () => {
           </a>
         </Card.Content>
       </Card>
-
     </main>
   )
 }

@@ -12,7 +12,6 @@ class ProfileTripList extends React.Component {
       title: '',
       shortText: '',
       status: true,
-      // user: this.props.id
     }
   }  
 
@@ -37,7 +36,6 @@ class ProfileTripList extends React.Component {
       status: this.state.newTrip.status,
       shortText: document.getElementById('triptext').value,
     })
-    // .then(this.props.updateList())
     .then(res => {
       console.log(this.props)
       this.props.updateList()
@@ -45,7 +43,6 @@ class ProfileTripList extends React.Component {
       }
     )
   }
-  
 
   handleCheckedBox = () => {
       this.setState({
@@ -60,32 +57,30 @@ class ProfileTripList extends React.Component {
     if (this.state.createTrip === false){
       return(
         <>
-        <h2>Your Trips</h2>
+          <h2>Your Trips</h2>
           <Button onClick={this.toggleNewTrip} className="newtrip"><span>+ </span>Create a New Trip</Button>
           <div className="column">
-          {this.props.trips}
+            {this.props.trips}
           </div>
         </>)
     } else {
       return(
         <>
           <h2>Add a New Trip</h2>
-          
           <div className="column">
-          <Form className="">
-            <Form.Group className="form-column" widths='equal'>
-              <Form.Input id="triptitle" name='trip-title'  label='Title of my trip'/>
-              <Form.TextArea id="triptext" name='trip-description'  label='Describe briefly your trip'/>
-            </Form.Group>
-            <Form.Group inline>
-              <label>Trip Status: </label>
-              <Form.Checkbox 
-                label='Check this box if this Road Trip has already ended'
-                onClick={this.handleCheckedBox} />
-            </Form.Group>
-            <Button className="addtrip" onClick={this.createNewTrip} >Create My New Trip!</Button><Button className="closetrip" onClick={this.closeTripForm}>Nevermind! I'll do it later!</Button>
-          </Form>
-          
+            <Form className="">
+              <Form.Group className="form-column" widths='equal'>
+                <Form.Input id="triptitle" name='trip-title'  label='Title of my trip'/>
+                <Form.TextArea id="triptext" name='trip-description'  label='Describe briefly your trip'/>
+              </Form.Group>
+              <Form.Group inline>
+                <label>Trip Status: </label>
+                <Form.Checkbox 
+                  label='Check this box if this Road Trip has already ended'
+                  onClick={this.handleCheckedBox} />
+              </Form.Group>
+              <Button className="addtrip" onClick={this.createNewTrip} >Create My New Trip!</Button><Button className="closetrip" onClick={this.closeTripForm}>Nevermind! I'll do it later!</Button>
+            </Form>
           </div>
         </>
       )
@@ -93,7 +88,5 @@ class ProfileTripList extends React.Component {
     
   }
 }
-
-
 
 export default ProfileTripList;

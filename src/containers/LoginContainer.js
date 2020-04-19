@@ -13,14 +13,10 @@ const LoginContainer = (props) => {
     <Segment>
       <Grid columns={2} relaxed='very'>
         <Grid.Column >
-          <Login 
-            login={props.login}
-            />
+          <Login login={props.login}/>
         </Grid.Column>
         <Grid.Column>
-          <Signup 
-              register={props.register}
-              />
+          <Signup register={props.register}/>
         </Grid.Column>
       </Grid>
       <Divider vertical> OR </Divider>

@@ -13,8 +13,8 @@ class Home extends React.Component {
   componentDidMount() {  
     TripApi.tripIndex()
     .then(res => {
-      let cardsDataFromAPI = res.data; // [{},{},{}]
-      let cardsInJSX = []; //[<Card/>,<Card/>,<Card/>]
+      let cardsDataFromAPI = res.data; 
+      let cardsInJSX = []; 
       for (let index in cardsDataFromAPI) {
         let tripId = cardsDataFromAPI[index]._id
         cardsInJSX.push(
@@ -22,7 +22,6 @@ class Home extends React.Component {
             <Card>
               <Card.Content>
                 <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
-                <Card.Meta>by Lili Verrot</Card.Meta>
                 <Card.Description>
                   {cardsDataFromAPI[index].shortText}
                 </Card.Description>

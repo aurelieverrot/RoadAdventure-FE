@@ -11,10 +11,8 @@ class ProfileContainer extends React.Component {
   state = {
     trips: [],
     user: {
-
     }
   }
-
 
   componentDidMount() {
     // selects only the list of trips from the logged User
@@ -84,8 +82,6 @@ class ProfileContainer extends React.Component {
       })
     })
   }
-
-
 
   render() {
     return(

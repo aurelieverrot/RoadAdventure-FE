@@ -26,7 +26,6 @@ class TripsContainer extends React.Component {
             <Card>
               <Card.Content>
                 <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
-                <Card.Meta>by Lili Verrot</Card.Meta>
                 <Card.Description>
                   {cardsDataFromAPI[index].shortText}
                 </Card.Description>
@@ -38,7 +37,6 @@ class TripsContainer extends React.Component {
           tripId: tripId
         })
       };
-      
       this.setState({
         cards: cardsInJSX
       });

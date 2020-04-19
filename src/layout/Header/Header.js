@@ -6,83 +6,61 @@ import './Header.css';
 class NavBar extends React.Component {
   
   render() {
-
-    // if (this.props.user !== null) {
-    //   console.log('jai un user')
-    // } else {
-    //   console.log('jai pas de user')
-    // }
-
     let leftLinks = [];
     let rightLinks = [];
-
+  // not Logged
     let notLoggedLabels = ['Home', 'About', 'Trips', 'Signup / Login'];
     let notLoggedLeftLinks = {
-        '/': "",
-        '/about': "",
-        '/trips': ""
+      '/': "",
+      '/about': "",
+      '/trips': ""
     };
     let notLoggedRightLinks = { 
-        '/login': "",
+      '/login': "",
     };
-
+  // Logged
     let loggedLabels = ['Home', 'About', 'Trips', 'My Profile', 'Logout'];
     let loggedLeftLinks = { 
-        '/': "",
-        '/about': "",
-        '/trips': "",
-        '/profile': "", 
+      '/': "",
+      '/about': "",
+      '/trips': "",
+      '/profile': "", 
     };
     let loggedRightLinks = { 
-        '/': "",
+      '/': "",
     };
-
+  // if a user is logged display this buttons, else display other buttons
     if (this.props.user === null) {
-        //if no user loggedin
-        let idx = 0;
-        for (let key in notLoggedLeftLinks) {
-            leftLinks.push(<Menu.Item><Link to={ key } key={ idx } className={ notLoggedLeftLinks[key] }>{notLoggedLabels[idx]}</Link></Menu.Item>);
-            idx += 1;
-        };
-
-        for (let key in notLoggedRightLinks) {
-            rightLinks.push(<Menu.Item position={'right'}><Link to={ key } key={ idx } className={ notLoggedRightLinks[key] }>{notLoggedLabels[idx]}</Link></Menu.Item>);
-            idx += 1;
-        };
+      //if no user loggedin
+      let idx = 0;
+      for (let key in notLoggedLeftLinks) {
+        leftLinks.push(<Menu.Item><Link to={ key } key={ idx } className={ notLoggedLeftLinks[key] }>{notLoggedLabels[idx]}</Link></Menu.Item>);
+        idx += 1;
+      };
+      for (let key in notLoggedRightLinks) {
+        rightLinks.push(<Menu.Item position={'right'}><Link to={ key } key={ idx } className={ notLoggedRightLinks[key] }>{notLoggedLabels[idx]}</Link></Menu.Item>);
+        idx += 1;
+      };
     } else {
-        // a user is loggedin
-        let idx = 0;
-        for (let key in loggedLeftLinks) {
-            leftLinks.push(<Menu.Item><Link to={ key } key={ idx } className={ loggedLeftLinks[key] }>{loggedLabels[idx]}</Link></Menu.Item>);
-            idx += 1;
-        };
+      // a user is loggedin
+      let idx = 0;
+      for (let key in loggedLeftLinks) {
+        leftLinks.push(<Menu.Item><Link to={ key } key={ idx } className={ loggedLeftLinks[key] }>{loggedLabels[idx]}</Link></Menu.Item>);
+        idx += 1;
+      };
 
-        for (let key in loggedRightLinks) {
-            rightLinks.push(<Menu.Item position={'right'}><Link onClick={this.props.logout} to={ key } key={ idx } className={ loggedRightLinks[key] }>{loggedLabels[idx]}</Link></Menu.Item>);
-            idx += 1;
-        };
+      for (let key in loggedRightLinks) {
+        rightLinks.push(<Menu.Item position={'right'}><Link onClick={this.props.logout} to={ key } key={ idx } className={ loggedRightLinks[key] }>{loggedLabels[idx]}</Link></Menu.Item>);
+        idx += 1;
+      };
     }
-
-
-
-
-
-
 
     return(
       <div>
         <Sticky>
           <Menu inverted style={{ margin: 0 }}>
             {leftLinks}
-            {/* <div className="right"> */}
-                {rightLinks}
-            {/* </div> */}
-            {/* <Menu.Item><Link to="/">Home</Link></Menu.Item>
-            <Menu.Item><Link to="/about">About</Link></Menu.Item>
-            <Menu.Item><Link to="/trips">Trips</Link></Menu.Item>
-            <Menu.Item><Link to="/profile">My Profile</Link></Menu.Item>
-            <Menu.Item position='right'><Link to="/login">Signup / Login</Link></Menu.Item>
-            <Menu.Item><Link onClick={this.props.logout} to ="/">Logout</Link></Menu.Item> */}
+            {rightLinks}
           </Menu>
         </Sticky>
       </div>

@@ -8,11 +8,6 @@ import jwt_decode from 'jwt-decode';
 import setAuthHeader from '../../utils/setAuthHeader';
 
 class App extends React.Component {
-
-  // constructor(props) {
-  //   super(props)
-  //   this.setInitialState()
-  // }
   
   login = (user) => {
     console.log("App: state at login:", this.state) //=> state is updated with input
@@ -34,10 +29,8 @@ class App extends React.Component {
   }
 
   register = (user) => {
-    // console.log("state:", this.state) => state is updated with input
     UserApi.signup(user)
     .then(res => {
-        // this.props.loggedIn(res.data.user);
         if (res.status === 200) {
           const token = res.data.token;
           localStorage.setItem('jwtToken', token);
@@ -76,7 +69,6 @@ class App extends React.Component {
         id: decoded._id
       }
     }
-
     this.setState(newState)
   }
   

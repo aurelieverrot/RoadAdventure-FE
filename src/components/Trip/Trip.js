@@ -18,11 +18,10 @@ class Trip extends React.Component {
   }
 
   componentDidMount() {
-    
     let tripId = window.location.pathname.split('/')[2]
     TripApi.tripShow(tripId)
       .then(res => {
-        // update state with TripApi call
+        // updates state with TripApi call
         if (res.data.status === true) {
           this.setState({
             status: 'on the road'
@@ -35,7 +34,7 @@ class Trip extends React.Component {
           title: res.data.title,
           shortText: res.data.shortText
         })
-        // update state with UserApi call, because Trip only know User id
+        // updates state with username using UserApi call, because Trip only knows User id
         UserApi.show(res.data.user)
         .then(res => {
           this.setState({
@@ -52,12 +51,10 @@ class Trip extends React.Component {
     .then(res => {
       console.log('trip deleted')
       this.props.history.push('/profile')
-      
     })
   }
 
   render() {
-
     let extraContent = []
     if (this.props.id === this.state.tripUserId) {
       extraContent.push(
@@ -67,28 +64,23 @@ class Trip extends React.Component {
       )
     }
       
-    
-      return (
-        <div>
-          <h1>{this.state.title}</h1>
-          <h3>{this.state.shortText}</h3>
-          <Grid columns={2} relaxed='very'>
-            <Grid.Column >
-              <h3>Created by: {this.state.user}</h3>
-              <h3>Status: {this.state.status}</h3>
-            </Grid.Column>
-            <Grid.Column >
-              {extraContent}
-            </Grid.Column>
-          </Grid>
-          <h2>List of stops</h2>
-          
-        </div>
-      )
-    
-    
+    return (
+      <div>
+        <h1>{this.state.title}</h1>
+        <h3>{this.state.shortText}</h3>
+        <Grid columns={2} relaxed='very'>
+          <Grid.Column >
+            <h3>Created by: {this.state.user}</h3>
+            <h3>Status: {this.state.status}</h3>
+          </Grid.Column>
+          <Grid.Column >
+            {extraContent}
+          </Grid.Column>
+        </Grid>
+        <h2>List of stops</h2>
+      </div>
+    )
   }
-  
 }
 
 export default withRouter(Trip);
