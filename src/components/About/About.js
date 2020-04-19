@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Image, Header, Grid } from 'semantic-ui-react';
+import { Card, Icon, Image, Header, Grid, Divider } from 'semantic-ui-react';
 import './About.css';
 import pic from '../../images/pic_square.jpg';
 
@@ -23,7 +23,7 @@ const About = () => {
             - Aurelie -</p>
         </Grid.Column>
         <Grid.Column className="column-right">
-          <Card>
+          <Card className="aboutPage">
             <Grid centered columns={2} >
               <Grid.Column className="columnInCard">
                 <Image src={pic} ui={false} className="pic"/>
@@ -42,6 +42,7 @@ const About = () => {
                     <i className="us flag"></i><i className="fr flag"></i>
                   </Card.Description>
                 </Card.Content>
+                <Divider />
                 <Card.Content extra>
                   <a href="https://www.linkedin.com/in/aurelieverrot/" target="_blank" rel="noopener noreferrer">
                     <Icon name='linkedin' to="https://www.linkedin.com/in/aurelieverrot/"/>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import { Divider, Card, Grid } from 'semantic-ui-react';
+import { Card, Grid } from 'semantic-ui-react';
 import TripApi from '../../api/TripApi';
+
 
 class Home extends React.Component {
   
@@ -25,7 +26,7 @@ class Home extends React.Component {
       for (let index in randomCards) {
         let tripId = randomCards[index]._id
         cardsInJSX.push(
-          <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
+          <Link className="trip-block" key={tripId} to={{pathname: `/trips/${tripId}`}}>
             <Card>
               <Card.Content>
                 <Card.Header>{randomCards[index].title}</Card.Header>
@@ -46,17 +47,19 @@ class Home extends React.Component {
   render() {
     return(
       <main>
-        <div className="background">Photo background here</div>
-        <Divider />
-        <div className="browse-trips">
-          <h1>Browse Trips</h1>    
-        </div>
-        <div className="browse-trips">
-          <Grid columns={3} relaxed='very'>
-            <Card.Group>
-              {this.state.cards}
-            </Card.Group>
-          </Grid>
+        <div className="background"></div>
+        {/* <Divider /> */}
+        <div className="browse-block">
+          <div className="browse-trips">
+            <h1>Browse Trips</h1>    
+          </div>
+          <div className="browse-trips">
+            <Grid columns={3} relaxed='very'>
+              <Card.Group>
+                {this.state.cards}
+              </Card.Group>
+            </Grid>
+          </div>
         </div>
       </main>
     )}

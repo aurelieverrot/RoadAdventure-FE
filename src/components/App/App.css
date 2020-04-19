@@ -1,3 +1,10 @@
-.root {
-  color: goldenrod;
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli'), url(../../fonts/Muli-VariableFont_wght.ttf) format('truetype');
 }
+
+h1,
+.header {
+  font-family: Muli, serif !important;
+}
+
