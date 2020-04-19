@@ -14,16 +14,23 @@ class Home extends React.Component {
     TripApi.tripIndex()
     .then(res => {
       let cardsDataFromAPI = res.data; 
+
+      let randomCards = []
+      while (randomCards.length < 3) {
+        randomCards.push(cardsDataFromAPI[Math.floor(Math.random()*cardsDataFromAPI.length)])
+      }
+      console.log(randomCards)
+
       let cardsInJSX = []; 
-      for (let index in cardsDataFromAPI) {
-        let tripId = cardsDataFromAPI[index]._id
+      for (let index in randomCards) {
+        let tripId = randomCards[index]._id
         cardsInJSX.push(
           <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
             <Card>
               <Card.Content>
-                <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
+                <Card.Header>{randomCards[index].title}</Card.Header>
                 <Card.Description>
-                  {cardsDataFromAPI[index].shortText}
+                  {randomCards[index].shortText}
                 </Card.Description>
               </Card.Content>
             </Card>

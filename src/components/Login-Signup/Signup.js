@@ -32,7 +32,6 @@ class Signup extends React.Component {
           <Form.Input onInput={this.updateState} name="username" fluid label='Username' placeholder='Username' />
           <Form.Input onInput={this.updateState} name="email" fluid label='Email' placeholder='ontheroad@again.com' />
           <Form.Input onInput={this.updateState} name="password" fluid label='Password' placeholder='Password' />
-          {/* <Form.Input onInput={this.updateState} name="password2" fluid label='Confirm Password' placeholder='Password' /> */}
           <Button>Sign Up!</Button>
         </Form.Group>
       </Form>
