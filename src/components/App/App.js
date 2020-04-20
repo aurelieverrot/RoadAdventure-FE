@@ -38,7 +38,8 @@ class App extends React.Component {
           const decoded = jwt_decode(token);
           this.setState({
             user: decoded.username,
-            id: decoded._id
+            id: decoded._id,
+            email: user.email
           })
         }
     })
@@ -66,7 +67,7 @@ class App extends React.Component {
       const decoded = jwt_decode(localStorage.getItem('jwtToken'));
       newState = {
         user: decoded.username,
-        id: decoded._id
+        id: decoded._id,
       }
     }
     this.setState(newState)
@@ -89,6 +90,7 @@ class App extends React.Component {
           register={this.register}       
           user={this.state.user}
           id={this.state.id}
+          email={this.state.email}
           loggedIn={this.loggedIn}
           />
         <Footer />

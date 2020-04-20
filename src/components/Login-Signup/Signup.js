@@ -19,7 +19,8 @@ class Signup extends React.Component {
     e.preventDefault()
     let newUser = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      email: this.state.email
     }
     this.props.register(newUser)
   }

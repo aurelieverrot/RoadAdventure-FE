@@ -89,7 +89,7 @@ class ProfileContainer extends React.Component {
         <h1>Welcome {this.props.user}</h1>
         <Grid columns={2} relaxed="very">
           <Grid.Column >
-            <ProfileForm user={this.state.user}/>
+            <ProfileForm email={this.props.email} user={this.state.user}/>
           </Grid.Column >
           <Grid.Column >
             <ProfileTripList user={this.state.user} trips={this.state.trips} updateList={this.updateList}/>

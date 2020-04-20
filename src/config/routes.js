@@ -45,7 +45,8 @@ const Routes = (props) => {
           <ProfileContainer
             loggedIn={props.loggedIn()} 
             user={props.user}
-            id={props.id}/>}/>
+            id={props.id}
+            email={props.email}/>}/>
     </Switch>
   )
 }
