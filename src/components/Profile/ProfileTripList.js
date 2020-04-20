@@ -68,7 +68,7 @@ class ProfileTripList extends React.Component {
       return(
         <>
           <h2>Add a New Trip</h2>
-          
+          <Divider/>
           <div className="column">
             <Form className="">
               <Form.Group className="form-column" widths='equal'>
