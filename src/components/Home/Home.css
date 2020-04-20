@@ -9,6 +9,7 @@ main {
   width: 100%;
   height: 400px;
   text-align: center;
+
 }
 
 .browse-trips {
@@ -19,10 +20,16 @@ main {
 
 .browse-block {
   background-color: rgba(34, 35, 34, 0.04);
-  z-index: 1;
+  height: 800px;
 }
 
 a.trip-block {
   margin: 0 10px
 }
 
+.home-title {
+  font-family: Muli, serif;;
+  color: white;
+  font-size: 120px;
+  padding-top: 200px
+}

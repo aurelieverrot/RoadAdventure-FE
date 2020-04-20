@@ -47,8 +47,9 @@ class Home extends React.Component {
   render() {
     return(
       <main>
-        <div className="background"></div>
-        {/* <Divider /> */}
+        <div className="background">
+          <div  className="home-title">Road Adventure</div>
+        </div>
         <div className="browse-block">
           <div className="browse-trips">
             <h1>Browse Trips</h1>    
