@@ -9,7 +9,7 @@ import Signup from '../components/Login-Signup/Signup';
 const LoginContainer = (props) => {
   return(
     <>
-    <div className="logo">Put logo here</div>
+    <div className="login-logo">Welcome to Road Adventure</div>
     <Segment>
       <Grid columns={2} relaxed='very'>
         <Grid.Column >

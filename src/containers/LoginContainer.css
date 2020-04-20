@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli'), url(../fonts/Muli-VariableFont_wght.ttf) format('truetype');
+}
+
 #root {
   background-color: rgba(34, 35, 34, 0.04);
   height: 100vh;
@@ -13,12 +18,19 @@ h1 {
   padding-bottom: 12px;
 }
 
-.logo {
+.login-logo {
   width: 40%;
   height: 130px;
-  background-color: chartreuse;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border-color: darkgrey;
+  border-radius: 5px;
   text-align: center;
   margin: 25px auto;
+  padding-top: 50px;
+  font-size: 35px;
+  font-weight: 800;
+  font-family: Muli, serif;
 }
 
 .equal.width.fields.form-column {
