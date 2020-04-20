@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(../../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+
 h2 {
   text-align: center;
+  font-family: Montserrat, serif;
+  margin-left: 50px
 }
 
 .fields {
@@ -7,7 +15,7 @@ h2 {
 }
 
 .ui.button {
-  margin-left: 130px;
+  /* margin-left: 130px; */
   margin-top: 40px;
 }
 
@@ -22,7 +30,7 @@ h2 {
   text-align: center;
 }
 
-span {
-  font-size: 40px;
-  
+.ui.card.card-profile {
+  font-size: 15px;
+  width: 90%;
 }

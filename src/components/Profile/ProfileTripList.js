@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Divider } from 'semantic-ui-react';
 import TripApi from '../../api/TripApi';
 import './Profile.css';
 
@@ -58,6 +58,7 @@ class ProfileTripList extends React.Component {
       return(
         <>
           <h2>Your Trips</h2>
+          <Divider/>
           <Button onClick={this.toggleNewTrip} className="newtrip"><span>+ </span>Create a New Trip</Button>
           <div className="column">
             {this.props.trips}
@@ -67,6 +68,7 @@ class ProfileTripList extends React.Component {
       return(
         <>
           <h2>Add a New Trip</h2>
+          
           <div className="column">
             <Form className="">
               <Form.Group className="form-column" widths='equal'>

@@ -27,7 +27,7 @@ class ProfileContainer extends React.Component {
         tripCards.push(
           <>
           <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
-            <Card>
+            <Card className="card-profile">
               <Card.Content>
                 <Card.Header>{userTrips[i].title}</Card.Header>
                 <Card.Description>
@@ -65,7 +65,7 @@ class ProfileContainer extends React.Component {
         tripCards.push(
           <>
           <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
-            <Card>
+            <Card className="card-profile">
               <Card.Content>
                 <Card.Header>{userTrips[i].title}</Card.Header>
                 <Card.Description>
