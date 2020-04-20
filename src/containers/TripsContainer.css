@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+div.description.tripCard {
+  font-family: Montserrat, serif !important;
+  padding: 0 8px 8px 8px;
+}
+
+div.content.cardTrip {
+  /* padding-top: 20px; */
+}

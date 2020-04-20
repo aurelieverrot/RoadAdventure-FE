@@ -5,9 +5,12 @@ const TripList = (props) => {
 
   return(
     <List>
+      
       <List.Item key={props.cards._id}>
           {props.cards}
+          
       </List.Item>
+      
     </List>
   )
 }
