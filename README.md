@@ -6,7 +6,13 @@ This is a MERN application (MongoDB, Express.js, React, and Node.js), React Sema
 
 ## Screenshots
 
+### Home Page
 
+![Image description](https://raw.githubusercontent.com/aurelieverrot/RoadAdventure-FE/submaster/src/images/screenshot1.png)
+
+### Profile Page
+
+![Image description](https://raw.githubusercontent.com/aurelieverrot/RoadAdventure-FE/submaster/src/images/screenshot2.png)
 
 ## What this app does
 
