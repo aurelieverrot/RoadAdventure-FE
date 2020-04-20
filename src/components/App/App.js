@@ -58,8 +58,8 @@ class App extends React.Component {
   componentWillMount() {
     // if a token exists, decode it and set it to our state
     let newState = {
-      user: '',
-      id: ''
+      user: null,
+      id: null
     }
     if (localStorage.jwtToken) {
       setAuthHeader(localStorage.jwtToken);

@@ -29,6 +29,7 @@ class NavBar extends React.Component {
     let loggedRightLinks = { 
       '/': "",
     };
+    
   // if a user is logged display this buttons, else display other buttons
     if (this.props.user === null) {
       //if no user loggedin
