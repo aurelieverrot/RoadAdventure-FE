@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Grid } from 'semantic-ui-react';
+// import { Link } from 'react-router-dom';
+// import { Card, Grid } from 'semantic-ui-react';
 import TripApi from '../api/TripApi';
 import TripList from '../components/Trip/TripList';
 import van from '../images/van.png';
@@ -24,17 +24,6 @@ class TripsContainer extends React.Component {
       for (let index in cardsDataFromAPI) {
         let tripId = cardsDataFromAPI[index]._id
         cardsInJSX.push(
-          // <Link key={tripId} to={{pathname: `/trips/${tripId}`}}>
-          //   <Card>
-          //     <Card.Content>
-          //       <Card.Header>{cardsDataFromAPI[index].title}</Card.Header>
-          //       <Card.Description>
-          //         {cardsDataFromAPI[index].shortText}
-          //       </Card.Description>
-          //     </Card.Content>
-          //   </Card>
-          // </Link>
-          
           <div className="ui basic segment">
             <a key={tripId} href={`/trips/${tripId}`}>
             <div className="ui card horizontal">
@@ -62,6 +51,21 @@ class TripsContainer extends React.Component {
       });
     });
   };
+
+  // Logic to separate the cards array in three, 
+  // to have 3 rows of cards in the render
+
+  // let results = {
+  //   0: [],
+  //   1: [],
+  //   2: []
+  // }
+  
+  // for(index in arr) {
+  //   results[index % 3].push(arr[index]);
+  // }
+
+
 
   render() {
     return(
